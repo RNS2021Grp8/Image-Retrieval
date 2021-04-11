@@ -13,3 +13,6 @@ media
 
 # secrets file
 secrets.py
+
+# data
+data/*
