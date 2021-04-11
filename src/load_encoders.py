@@ -1,6 +1,6 @@
 import os
 from tensorflow import keras
-from .utils import MODEL_PATH
+from .vars import MODEL_PATH
 
 
 def load_vision_encoder():

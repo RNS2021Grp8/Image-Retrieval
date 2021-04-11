@@ -1,7 +1,7 @@
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
-from .image_modules import generate_embeddings, get_image_paths
+from .image_processing import generate_embeddings, get_image_paths
 from .load_encoders import load_text_encoder
 
 

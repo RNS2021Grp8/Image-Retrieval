@@ -3,8 +3,7 @@ import tensorflow as tf
 
 from os import walk
 from .load_encoders import load_vision_encoder
-from .parameters import BATCH_SIZE
-from .utils import DATA_DIR
+from .vars import BATCH_SIZE, DATA_DIR
 
 
 def get_image_paths():  # Requires testing
