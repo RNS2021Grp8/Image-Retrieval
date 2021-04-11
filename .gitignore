@@ -16,3 +16,6 @@ secrets.py
 
 # data
 data/*
+
+#models
+models/*
