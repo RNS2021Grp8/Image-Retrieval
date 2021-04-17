@@ -11,7 +11,7 @@ def get_image_paths():  # Requires testing
     image_paths = []
     for _, _, files in walk(images_dir):
         for filename in files:
-            image_path = os.path.join(images_dir, +"%012d.jpg" % (filename))
+            image_path = os.path.join(images_dir, filename)
             image_paths.append(image_path)
     return image_paths
 

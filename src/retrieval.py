@@ -25,8 +25,3 @@ def search(query):
         ax = plt.subplot(3, 3, i + 1)
         plt.imshow(mpimg.imread(matches[i]))
         plt.axis("off")
-
-
-if __name__ == "__main__":
-    query = input("Enter query string: ")
-    search(query)

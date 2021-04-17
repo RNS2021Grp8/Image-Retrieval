@@ -1,7 +1,7 @@
 import os
+from deploy.settings import BASE_DIR
 
-ROOT_DIR = os.path.abspath(os.path.join("..", os.path.dirname(os.path.abspath(__file__))))
-DATA_DIR = os.path.abspath(os.path.join(ROOT_DIR, "data"))
-MODEL_PATH = os.path.abspath(os.path.join(ROOT_DIR, "model"))
+DATA_DIR = os.path.abspath(os.path.join(BASE_DIR, "data"))
+MODEL_PATH = os.path.abspath(os.path.join(BASE_DIR, "models"))
 BATCH_SIZE = 256
 NUM_OF_EPOCHS = 30

@@ -7,6 +7,7 @@ name = "pypi"
 django = "*"
 tensorflow = "*"
 matplotlib = "*"
+tensorflow-text = "*"
 
 [dev-packages]
 black = "*"
