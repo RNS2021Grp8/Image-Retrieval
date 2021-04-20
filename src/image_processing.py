@@ -6,7 +6,7 @@ from .load_encoders import load_vision_encoder
 from .vars import BATCH_SIZE, DATA_DIR
 
 
-def get_image_paths():  # Requires testing
+def get_image_paths():
     images_dir = os.path.join(DATA_DIR, "images")
     image_paths = []
     for _, _, files in walk(images_dir):

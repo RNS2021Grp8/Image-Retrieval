@@ -19,9 +19,13 @@ def find_matches(image_embeddings, queries, k=9, normalize=True):
 
 def search(query):
     image_embeddings = generate_embeddings()
+    print("Embeddings generated")
     matches = find_matches(image_embeddings, [query], normalize=True)[0]
+    print("Matches found. Plotting...")
     plt.figure(figsize=(20, 20))
     for i in range(9):
         ax = plt.subplot(3, 3, i + 1)
         plt.imshow(mpimg.imread(matches[i]))
         plt.axis("off")
+    plt.show()
+    print("Plotting complete")
