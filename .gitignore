@@ -17,5 +17,8 @@ secrets.py
 # data
 data/*
 
-#models
+# models
 models/*
+
+# Pipfile.lock
+Pipfile.lock
