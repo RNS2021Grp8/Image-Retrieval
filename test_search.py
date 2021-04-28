@@ -1,5 +1,7 @@
 import tensorflow as tf
 from src.retrieval import search
+import warnings
+warnings.filterwarnings("ignore")
 
 tf.get_logger().setLevel("INFO")
 

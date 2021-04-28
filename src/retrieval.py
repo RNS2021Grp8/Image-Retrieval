@@ -5,7 +5,7 @@ from .image_processing import generate_embeddings, get_image_paths
 from .load_encoders import load_text_encoder
 
 
-def find_matches(image_embeddings, queries, k=9, normalize=True):
+def find_matches(image_embeddings, queries, k=6, normalize=True):
     image_paths = get_image_paths()
     text_encoder = load_text_encoder()
     query_embedding = text_encoder(tf.convert_to_tensor(queries))
