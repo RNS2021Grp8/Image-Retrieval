@@ -7,3 +7,10 @@ def index(request):
         request,
         "app/index.html",
     )
+
+
+def results(request):
+    return render(
+        request,
+        "app/results.html",
+    )

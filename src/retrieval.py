@@ -5,7 +5,7 @@ from .image_processing import generate_embeddings, get_image_paths
 from .load_encoders import load_text_encoder
 
 
-def find_matches(image_embeddings, queries, k=6, normalize=True):
+def find_matches(image_embeddings, queries, k=9, normalize=True):
     image_paths = get_image_paths()
     text_encoder = load_text_encoder()
     query_embedding = text_encoder(tf.convert_to_tensor(queries))
@@ -21,6 +21,8 @@ def search(query):
     image_embeddings = generate_embeddings()
     print("Embeddings generated")
     matches = find_matches(image_embeddings, [query], normalize=True)[0]
+    return matches
+    """
     print("Matches found. Plotting...")
     plt.figure(figsize=(20, 20))
     for i in range(9):
@@ -29,3 +31,4 @@ def search(query):
         plt.axis("off")
     plt.show()
     print("Plotting complete")
+    """

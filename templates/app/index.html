@@ -1,6 +1,20 @@
-<!DOCTYPE html>
-<html>
-	<body>
-		<h1>App successfully registered</h1>
-	</body>
-</html>
+{% extends 'base.html' %} {% block content %} {% load static %}
+<body class="background">
+	<div class="jumbotron index-jumbotron">
+		<h1
+			class="display-3 center-align-text text-light"
+			style="font-size: 55pt"
+		>
+			Image Retrieval
+		</h1>
+		<p class="lead center-align-text text-light" style="font-size: 20pt">
+			TODO: Add Project Desc and custom CSS
+		</p>
+	</div>
+	<form method="GET" action="{% url 'app:results' %}" novalidate>
+		{% csrf_token %}
+		<input type="search" class="required form-control" />
+		<input type="submit" class="btn btn-primary" />
+	</form>
+</body>
+{% endblock %}
