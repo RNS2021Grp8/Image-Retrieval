@@ -1,3 +1,16 @@
 .index-jumbotron {
 	background: rgba(31, 30, 30, 0.676);
+
+}
+#hed {
+	text-align: center;
+	padding-top: 3%;
+}
+#srch {
+	width: 300px;
+	margin-left: 60%;
+}
+#sub {
+	width: 150px;
+	margin-left: 69%;
 }
