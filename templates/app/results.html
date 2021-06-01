@@ -1,0 +1,7 @@
+{% extends 'base.html' %} 
+{% block content %} 
+{% load static %}
+{% for path in paths %}
+<img src = "{{path}}"/>
+{% endfor %}
+{% endblock %}
