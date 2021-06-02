@@ -8,16 +8,24 @@
 		>
 			Image Retrieval
 		</h1>
-		<p class="lead center-align-text text-light" style="font-size: 20pt">
+		<p class="lead center-align-text text-light">
 			TODO: Add Project Desc and custom CSS
 		</p>
 	</div>
-	<form method="POST" action="{% url 'app:index' %}" novalidate>
-		{% csrf_token %}
-		<div class="d-flex flex-column">
-			<input type="search" name="query" class="required form-control" id="srch" />
-			<input type="submit" class="btn btn-primary" id="sub" />
-		</div>
-	</form>
+    <div class="col-md-6 col-md-offset-3">
+        <div class="row">
+            <div class="center">
+                <form class="search" method="POST" action="{% url 'app:index' %}" novalidate>
+                    {% csrf_token %}
+                    <div>
+                        <input type="search" name="query" class="required form-control"/>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div> 
+    </div>
 </body>
 {% endblock %}

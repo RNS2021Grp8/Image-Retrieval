@@ -11,6 +11,15 @@
 	margin-left: 60%;
 }
 #sub {
-	width: 150px;
+	width: 50px;
 	margin-left: 69%;
+}
+.background {
+    background-image: url("../img/bench.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.center-align-text {
+    text-align: center;
+    font-size: medium;
 }
