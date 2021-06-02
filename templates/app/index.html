@@ -9,23 +9,30 @@
 			Image Retrieval
 		</h1>
 		<p class="lead center-align-text text-light">
-			TODO: Add Project Desc and custom CSS
+			This is a web app designed to demonstrate the process of Content Based Image Retrieval.
+            <br> 
+            To see the process in action, enter a search query and press submit.
 		</p>
 	</div>
-    <div class="col-md-6 col-md-offset-3">
-        <div class="row">
-            <div class="center">
-                <form class="search" method="POST" action="{% url 'app:index' %}" novalidate>
-                    {% csrf_token %}
-                    <div>
-                        <input type="search" name="query" class="required form-control"/>
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fa fa-search"></i>
-                        </button>
+    <br>
+    <form class="search" method="POST" action="{% url 'app:index' %}" novalidate>
+        {% csrf_token %}
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <div class="input-group">
+                        
+                        <input type="search" name="query" class="required form-control search-box" placeholder="Search for images">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
                     </div>
-                </form>
+                </div>
             </div>
-        </div> 
-    </div>
+        </div>
+    </form>
 </body>
 {% endblock %}

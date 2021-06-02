@@ -1,5 +1,5 @@
 .index-jumbotron {
-	background: rgba(31, 30, 30, 0.676);
+	background: rgba(31, 30, 30, 0.776);
 
 }
 #hed {
@@ -7,7 +7,7 @@
 	padding-top: 3%;
 }
 #srch {
-	width: 300px;
+	width: 400px;
 	margin-left: 60%;
 }
 #sub {
@@ -21,5 +21,15 @@
 }
 .center-align-text {
     text-align: center;
-    font-size: medium;
+    font-size: 25pt;
+}
+.form-ele {
+	width: 400px;
+}
+.mx-auto {
+	margin-right: auto !important;
+	margin-left: auto !important;
+}
+.search-box {
+	background: rgba(31, 30, 30, 0.776);
 }
