@@ -1,11 +1,8 @@
-import tensorflow as tf
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
-import pickle
-from deploy.settings import BASE_DIR
 import os
 import gc
-from .image_processing import generate_embeddings, get_image_paths
+import pickle
+import tensorflow as tf
+from deploy.settings import BASE_DIR
 from .load_encoders import load_text_encoder
 
 
@@ -23,20 +20,10 @@ def find_matches(image_embeddings_dict, queries, k=9, normalize=True):
 
 
 def search(query):
-    #image_embeddings = generate_embeddings()
     gc.collect()
     handle = open(os.path.join(BASE_DIR, "output.pkl"), "rb")
     image_embeddings_dict = pickle.load(handle)
     print("Embeddings generated")
     matches = find_matches(image_embeddings_dict, [query], normalize=True)[0]
     return matches
-    """
-    print("Matches found. Plotting...")
-    plt.figure(figsize=(20, 20))
-    for i in range(9):
-        ax = plt.subplot(3, 3, i + 1)
-        plt.imshow(mpimg.imread(matches[i]))
-        plt.axis("off")
-    plt.show()
-    print("Plotting complete")
-    """
+

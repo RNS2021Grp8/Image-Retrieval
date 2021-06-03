@@ -4,8 +4,13 @@ from src.image_processing import generate_embeddings
 from django.shortcuts import render
 from pathlib import Path
 
-
 def index(request):
+    return render(
+        request,
+        "app/index.html",
+    )
+
+def results(request):
 
     if request.method == "POST":
 
@@ -19,8 +24,3 @@ def index(request):
             result_paths[i] = os.path.join("media","images", filename)
         print(result_paths)
         return render(request, "app/results.html", {"paths": result_paths})
-
-    return render(
-        request,
-        "app/index.html",
-    )

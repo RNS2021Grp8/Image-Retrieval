@@ -1,12 +1,11 @@
 import os
-import tensorflow as tf
 import pickle
-from deploy.settings import BASE_DIR
-from collections import OrderedDict
-
+import tensorflow as tf
 from os import walk
+from collections import OrderedDict
+from .vars import BASE_DIR, BATCH_SIZE, DATA_DIR
 from .load_encoders import load_vision_encoder
-from .vars import BATCH_SIZE, DATA_DIR
+
 
 
 def get_image_paths():

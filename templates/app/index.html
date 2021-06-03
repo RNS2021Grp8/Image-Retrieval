@@ -15,14 +15,13 @@
 		</p>
 	</div>
     <br>
-    <form class="search" method="POST" action="{% url 'app:index' %}" novalidate>
+    <form class="search" method="POST" action="{% url 'app:results' %}" novalidate>
         {% csrf_token %}
 
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 mx-auto">
                     <div class="input-group">
-                        
                         <input type="search" name="query" class="required form-control search-box" placeholder="Search for images">
                         <span class="input-group-btn">
                             <button class="btn btn-primary" type="submit">
