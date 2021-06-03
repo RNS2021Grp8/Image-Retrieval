@@ -2,6 +2,7 @@ import os
 from deploy.settings import BASE_DIR
 from src.image_processing import generate_embeddings
 from django.shortcuts import render
+from pathlib import Path
 
 
 def index(request):
@@ -14,7 +15,8 @@ def index(request):
         
         result_paths = search(request.POST.get("query"))
         for i in range(len(result_paths)):
-            result_paths[i] = os.path.join("media","images", result_paths[i][49:])
+            filename = Path(result_paths[i]).name
+            result_paths[i] = os.path.join("media","images", filename)
         print(result_paths)
         return render(request, "app/results.html", {"paths": result_paths})
 
