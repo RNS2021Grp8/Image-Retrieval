@@ -1,5 +1,8 @@
 import os
 import tensorflow as tf
+import pickle
+from deploy.settings import BASE_DIR
+from collections import OrderedDict
 
 from os import walk
 from .load_encoders import load_vision_encoder
@@ -30,4 +33,7 @@ def generate_embeddings():
         verbose=1,
     )
     print(f"Image embeddings shape: {image_embeddings.shape}.")
-    return image_embeddings
+
+    image_embeddings_dict = OrderedDict(zip(image_paths, image_embeddings))
+    output_file = open(os.path.join(BASE_DIR, "output.pkl"), "wb")
+    pickle.dump(image_embeddings_dict, output_file)

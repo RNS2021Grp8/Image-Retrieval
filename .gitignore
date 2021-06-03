@@ -22,3 +22,6 @@ models/*
 
 # Pipfile.lock
 Pipfile.lock
+
+#Pickle file
+output.pkl
