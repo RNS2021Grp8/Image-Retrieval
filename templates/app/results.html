@@ -1,7 +1,17 @@
 {% extends 'base.html' %} 
 {% block content %} 
 {% load static %}
-{% for path in paths %}
-<img src = "{{path}}"/>
+<div class="card-body">
+    <h5 class="card-title">Best Match</h5>
+    <img src = "{{path}}"/>
+    <i>{{score}}</i>
+</div>
+{% for path, score in res %}
+<div class="card">
+    <div class="card-body">
+      <img src = "{{path}}"/>
+      <i>{{score}}</i>
+    </div>
+</div>
 {% endfor %}
 {% endblock %}

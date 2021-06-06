@@ -22,13 +22,13 @@ def find_matches(image_embeddings_dict, queries, k=9, normalize=True):
     value_index = dict(zip(values, indices))
     value_index_sorted = OrderedDict(sorted(value_index.items(), reverse=True))
     results = list(value_index_sorted.values())
-    return [[image_paths[idx] for idx in results]]
+    return [image_paths[idx] for idx in results], value_index_sorted.keys()
 
 def search(query):
     gc.collect()
     handle = open(os.path.join(BASE_DIR, "output.pkl"), "rb")
     image_embeddings_dict = pickle.load(handle)
     print("Embeddings generated")
-    matches = find_matches(image_embeddings_dict, [query], normalize=True)[0]
-    return matches
+    matches, scores = find_matches(image_embeddings_dict, [query], normalize=True)
+    return matches, scores
 
