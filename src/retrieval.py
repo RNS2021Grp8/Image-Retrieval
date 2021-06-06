@@ -1,3 +1,4 @@
+from collections import OrderedDict
 import os
 import gc
 import pickle
@@ -15,10 +16,13 @@ def find_matches(image_embeddings_dict, queries, k=9, normalize=True):
         image_embeddings = tf.math.l2_normalize(image_embeddings, axis=1)
         query_embedding = tf.math.l2_normalize(query_embedding, axis=1)
     dot_similarity = tf.matmul(query_embedding, image_embeddings, transpose_b=True)
-    tf.sort(dot_similarity, direction='DESCENDING')
-    results = tf.math.top_k(dot_similarity, k).indices.numpy()
-    return [[image_paths[idx] for idx in indices] for indices in results]
-
+    top_k = tf.math.top_k(dot_similarity, k)
+    values = top_k.values.numpy().tolist()[0]
+    indices = top_k.indices.numpy().tolist()[0]
+    value_index = dict(zip(values, indices))
+    value_index_sorted = OrderedDict(sorted(value_index.items(), reverse=True))
+    results = list(value_index_sorted.values())
+    return [[image_paths[idx] for idx in results]]
 
 def search(query):
     gc.collect()
