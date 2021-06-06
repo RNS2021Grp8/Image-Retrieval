@@ -15,6 +15,7 @@ def find_matches(image_embeddings_dict, queries, k=9, normalize=True):
         image_embeddings = tf.math.l2_normalize(image_embeddings, axis=1)
         query_embedding = tf.math.l2_normalize(query_embedding, axis=1)
     dot_similarity = tf.matmul(query_embedding, image_embeddings, transpose_b=True)
+    tf.sort(dot_similarity, direction='DESCENDING')
     results = tf.math.top_k(dot_similarity, k).indices.numpy()
     return [[image_paths[idx] for idx in indices] for indices in results]
 
