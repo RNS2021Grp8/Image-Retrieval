@@ -22,7 +22,8 @@ def find_matches(image_embeddings_dict, queries, k=9, normalize=True):
     value_index = dict(zip(values, indices))
     value_index_sorted = OrderedDict(sorted(value_index.items(), reverse=True))
     results = list(value_index_sorted.values())
-    return [image_paths[idx] for idx in results], value_index_sorted.keys()
+    scores = list(value_index_sorted.keys())
+    return [image_paths[idx] for idx in results], scores
 
 def search(query):
     gc.collect()

@@ -23,7 +23,7 @@ def results(request):
                 filename = Path(result_paths[i]).name
                 result_paths[i] = "media/"+"images/"+ filename
             print(result_paths)
-            return render(request, "app/results.html", {"res": zip(result_paths, scores)})
+            return render(request, "app/results.html", {"res": [result_paths, scores]})
         elif "btn-update" in request.POST:
             if os.path.exists(pickle_file):
                 os.remove(pickle_file)
