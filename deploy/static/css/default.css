@@ -15,7 +15,7 @@
 	margin-left: 69%;
 }
 .background {
-    background-image: url("../img/bench.jpg");
+    background-image: url("../img/camera.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
 }
@@ -37,7 +37,6 @@
 	background-color: transparent;
 	width: 300px;
 	height: 200px;
-	border: 1px solid #f1f1f1;
 	perspective: 1000px; /* Remove this if you don't want the 3D effect */
   }
   
@@ -73,8 +72,8 @@
   
   /* Style the back side */
   .flip-card-back {
-	background-color: dodgerblue;
-	color: white;
+	background-color: bisque;
+	color: black;
 	transform: rotateY(180deg);
 	width: 300px;
 	height: 300px;
@@ -82,5 +81,11 @@
 	size: 10pt;
   }
 .best{
-	padding-left: 38%;
+	padding-left: 39%;
+}
+.results_background{
+	background-image: url("../img/rosewood.jpg");
+    background-size: 100%;
+    background-repeat: repeat-y;
+	
 }
