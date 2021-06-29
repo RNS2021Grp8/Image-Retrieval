@@ -35,8 +35,8 @@
 }
 .flip-card {
 	background-color: transparent;
-	width: 300px;
-	height: 200px;
+	width: 500px;
+	height: 500px;
 	perspective: 1000px; /* Remove this if you don't want the 3D effect */
   }
   
@@ -75,13 +75,13 @@
 	background-color: bisque;
 	color: black;
 	transform: rotateY(180deg);
-	width: 300px;
-	height: 300px;
+	width: 500px;
+	height: 500px;
 	padding-top: 30%;
 	size: 10pt;
   }
 .best{
-	padding-left: 39%;
+	padding-left: 31%;
 }
 .results_background{
 	background-image: url("../img/rosewood.jpg");
